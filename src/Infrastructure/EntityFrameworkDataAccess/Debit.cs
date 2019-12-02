@@ -2,9 +2,9 @@ namespace Infrastructure.EntityFrameworkDataAccess
 {
     using System;
     using Domain.Accounts;
-    using Domain.ValueObjects;
+    using Domain.Accounts.ValueObjects;
 
-    public class Debit : Domain.Accounts.Debit
+    public class Debit : Domain.Accounts.Debits.Debit
     {
         public Debit(IAccount account, PositiveMoney amountToWithdraw, DateTime transactionDate)
         {

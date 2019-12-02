@@ -1,8 +1,14 @@
 namespace Infrastructure.EntityFrameworkDataAccess
 {
     using System;
-    using Domain.Users;
-    using Domain.ValueObjects;
+    using Domain.Accounts;
+    using Domain.Accounts.Credits;
+    using Domain.Accounts.Debits;
+    using Domain.Accounts.ValueObjects;
+    using Domain.Customers;
+    using Domain.Customers.ValueObjects;
+    using Domain.Security;
+    using Domain.Security.ValueObjects;
     using Microsoft.EntityFrameworkCore;
 
     public sealed class MangaContext : DbContext
