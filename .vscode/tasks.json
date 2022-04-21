@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/src/WebApi/WebApi.csproj",
+                "${workspaceFolder}/accounts-api/src/WebApi/WebApi.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/src/WebApi/WebApi.csproj",
+                "${workspaceFolder}/accounts-api/src/WebApi/WebApi.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
@@ -32,42 +32,25 @@
             "args": [
                 "watch",
                 "run",
-                "${workspaceFolder}/src/WebApi/WebApi.csproj",
+                "${workspaceFolder}/accounts-api/src/WebApi/WebApi.csproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
         },
         {
-            "label": "build",
-            "command": "dotnet",
+            "label": "seeddb",
+            "command": "docker-compose",
             "type": "process",
             "args": [
-                "build",
-                "${workspaceFolder}/src/WebApi/WebApi.csproj"
+                "up",
+                "-d",
+                "accounts-api-seed"
             ],
-            "problemMatcher": "$tsc"
-        },
-        {
-            "label": "publish",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "publish",
-                "${workspaceFolder}/src/WebApi/WebApi.csproj"
-            ],
-            "problemMatcher": "$tsc"
-        },
-        {
-            "label": "watch",
-            "command": "dotnet",
-            "type": "process",
-            "args": [
-                "watch",
-                "run",
-                "${workspaceFolder}/src/WebApi/WebApi.csproj"
-            ],
-            "problemMatcher": "$tsc"
+            "problemMatcher": "$msCompile",
+            "options": {
+                "cwd": "${workspaceFolder}/.docker"
+            },
         }
     ]
 }
